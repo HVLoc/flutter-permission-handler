@@ -21,13 +21,13 @@ if (NOT NUGET)
     set(NUGET ${nuget_SOURCE_DIR}/nuget.exe)
 endif()
 
-execute_process(COMMAND
-    ${NUGET} install Microsoft.Windows.CppWinRT -Version ${CPPWINRT_VERSION} -OutputDirectory packages
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    RESULT_VARIABLE ret)
-if (NOT ret EQUAL 0)
-    message(FATAL_ERROR "Failed to install nuget package Microsoft.Windows.CppWinRT.${CPPWINRT_VERSION}")
-endif()
+# execute_process(COMMAND
+#     ${NUGET} install Microsoft.Windows.CppWinRT -Version ${CPPWINRT_VERSION} -OutputDirectory packages
+#     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+#     RESULT_VARIABLE ret)
+# if (NOT ret EQUAL 0)
+#     message(FATAL_ERROR "Failed to install nuget package Microsoft.Windows.CppWinRT.${CPPWINRT_VERSION}")
+# endif()
 
 set(CPPWINRT ${CMAKE_BINARY_DIR}/packages/Microsoft.Windows.CppWinRT.${CPPWINRT_VERSION}/bin/cppwinrt.exe)
 execute_process(COMMAND
